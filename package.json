@@ -1,15 +1,15 @@
 {
-  "name": "storybook-addon-kit",
+  "name": "Storybook Vitest",
   "version": "0.0.0",
-  "description": "everything you need to build a Storybook addon",
+  "description": "Adds a panel to display Vitest unit test results",
   "keywords": [
-    "storybook-addons"
+    "storybook-addons", "vitest", "storybook-addons"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybookjs/storybook-addon-kit"
+    "url": "https://github.com/krzysztofradomski/storybook-addon-vitest"
   },
-  "author": "package-author",
+  "author": "Krzysztof Radomski <krzysztof@radomski.io>",
   "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -80,9 +80,9 @@
     "access": "public"
   },
   "storybook": {
-    "displayName": "Addon Kit",
+    "displayName": "Storybook Vitest",
     "supportedFrameworks": [
-      "supported-frameworks"
+      "react"
     ],
     "icon": "https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png"
   }
