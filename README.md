@@ -1,18 +1,26 @@
+## storybook_vitest_addon
+
+### \_
+
 Addon meant to display Vitest unit test results in a new Stoybook panel. Developed and tested with React.
+Simply add it to the addon list in your Storybook config, and then you can use it in any story.
+
+The addon offers minimal visuals for maximum clarity.
+It needs 2 params: `results` - test results file in json format and `testFile` - name of the component test file (TypeScript definitions available).
 
 Example usage:
 
 ```
-// Component.stories.tsx
+// Button.stories.tsx
 
 import vitestResults from "./unit-test-results.json";
 /.../
 export default {
-  title: "Example/Component",
-  component: Header,
+  title: "Example/Button",
+  component: Button,
   parameters: {
     vitest: {
-      testFile: "Header.test.tsx",
+      testFile: "Button.test.tsx",
        results: vitestResults,
     },
   },
