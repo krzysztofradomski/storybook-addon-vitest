@@ -1,3 +1,15 @@
+# v0.0.2 (Sun Mar 27 2022)
+
+#### ⚠️ Pushed to `main`
+
+- update keywords and readme (krzysztof.radomski@netigate.se)
+
+#### Authors: 1
+
+- Krzysztof Radomski (krzysztof.radomski@netigate.se)
+
+---
+
 # v0.0.1 (Sun Mar 27 2022)
 
 #### ⚠️ Pushed to `main`
