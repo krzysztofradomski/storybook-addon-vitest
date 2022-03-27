@@ -10,7 +10,8 @@
     "report",
     "test",
     "results",
-    "unit-testing"
+    "unit-testing",
+    "storybook-addons"
   ],
   "repository": {
     "type": "git",
