@@ -3,6 +3,7 @@
   "version": "0.0.3",
   "description": "Adds a panel to display Vitest unit test results",
   "keywords": [
+    "storybook-addons",
     "addon",
     "storybook",
     "vitest",
@@ -10,8 +11,7 @@
     "report",
     "test",
     "results",
-    "unit-testing",
-    "storybook-addons"
+    "unit-testing"
   ],
   "repository": {
     "type": "git",
