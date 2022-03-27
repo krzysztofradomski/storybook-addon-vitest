@@ -1,9 +1,11 @@
 {
-  "name": "Storybook Vitest",
+  "name": "storybook_vitest_addon",
   "version": "0.0.0",
   "description": "Adds a panel to display Vitest unit test results",
   "keywords": [
-    "storybook-addons", "vitest", "storybook-addons"
+    "storybook-addons",
+    "vitest",
+    "storybook-addons"
   ],
   "repository": {
     "type": "git",
@@ -85,5 +87,6 @@
       "react"
     ],
     "icon": "https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png"
-  }
+  },
+  "dependencies": {}
 }

@@ -1,36 +1,36 @@
 import React from "react";
-import { useAddonState, useChannel } from "@storybook/api";
-import { AddonPanel } from "@storybook/components";
-import { ADDON_ID, EVENTS } from "./constants";
-import { PanelContent } from "./components/PanelContent";
+import { useParameter } from "@storybook/api";
+import { PARAM_KEY } from "./constants";
+import { JSONTestResults, TestResult, VitestParams } from "./typings";
 
-interface PanelProps {
-  active: boolean;
-}
+const VitestPanel = () => {
+  const params = useParameter(PARAM_KEY, null) as VitestParams;
+  const fileName = params?.testFile || null;
+  const json: JSONTestResults = params?.results || null;
 
-export const Panel: React.FC<PanelProps> = (props) => {
-  // https://storybook.js.org/docs/react/addons/addons-api#useaddonstate
-  const [results, setState] = useAddonState(ADDON_ID, {
-    danger: [],
-    warning: [],
-  });
-
-  // https://storybook.js.org/docs/react/addons/addons-api#usechannel
-  const emit = useChannel({
-    [EVENTS.RESULT]: (newResults) => setState(newResults),
-  });
+  const data = json?.testResults
+    ?.filter((t: TestResult) => t.testFilePath.includes(fileName))
+    .map((t) => ({
+      status: t.status,
+      displayName: t.displayName,
+    }));
 
   return (
-    <AddonPanel {...props}>
-      <PanelContent
-        results={results}
-        fetchData={() => {
-          emit(EVENTS.REQUEST);
-        }}
-        clearData={() => {
-          emit(EVENTS.CLEAR);
-        }}
-      />
-    </AddonPanel>
+    <ul>
+      {!data && <li>No test results file available</li>}
+      {data?.length == 0 && <li>No tests found</li>}
+      {data?.map((d: { status: string; displayName: string }) => (
+        <li key={d.displayName}>
+          <p>
+            {d.displayName}
+            <span style={{ color: d.status === "pass" ? "green" : "red" }}>
+              {d.status}
+            </span>
+          </p>
+        </li>
+      ))}
+    </ul>
   );
 };
+
+export default VitestPanel;

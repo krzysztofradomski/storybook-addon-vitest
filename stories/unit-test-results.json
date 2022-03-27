@@ -1,0 +1,81 @@
+{
+  "numTotalTestSuites": 2,
+  "numPassedTestSuites": 2,
+  "numFailedTestSuites": 0,
+  "numPendingTestSuites": 0,
+  "numTotalTests": 6,
+  "numPassedTests": 6,
+  "numFailedTests": 0,
+  "numPendingTests": 0,
+  "numTodoTests": 0,
+  "startTime": 1648313025668,
+  "success": true,
+  "testResults": [
+    {
+      "perfStats": {
+        "runtime": 15.065416038036346,
+        "start": 1648313027911,
+        "end": 1648313027926.0654
+      },
+      "displayName": "it renders text and children ✓",
+      "skipped": false,
+      "status": "pass",
+      "testFilePath": "../components/Buttons/Button/Button.test.tsx"
+    },
+    {
+      "perfStats": {
+        "runtime": 1.8208749890327454,
+        "start": 1648313027926,
+        "end": 1648313027927.8208
+      },
+      "displayName": "it handles click action ✓",
+      "skipped": false,
+      "status": "pass",
+      "testFilePath": "../components/Buttons/Button/Button.test.tsx"
+    },
+    {
+      "perfStats": {
+        "runtime": 1.6565420031547546,
+        "start": 1648313027928,
+        "end": 1648313027929.6565
+      },
+      "displayName": "it can be disabled correctly ✓",
+      "skipped": false,
+      "status": "pass",
+      "testFilePath": "../components/Buttons/Button/Button.test.tsx"
+    },
+    {
+      "perfStats": {
+        "runtime": 1.6252089738845825,
+        "start": 1648313027930,
+        "end": 1648313027931.6252
+      },
+      "displayName": "it can be marked with test id ✓",
+      "skipped": false,
+      "status": "pass",
+      "testFilePath": "../components/Buttons/Button/Button.test.tsx"
+    },
+    {
+      "perfStats": {
+        "runtime": 3.6624580025672913,
+        "start": 1648313027931,
+        "end": 1648313027934.6624
+      },
+      "displayName": "it can have its type changed to reset or submit ✓",
+      "skipped": false,
+      "status": "pass",
+      "testFilePath": "../components/Buttons/Button/Button.test.tsx"
+    },
+    {
+      "perfStats": {
+        "runtime": 4.643208026885986,
+        "start": 1648313027935,
+        "end": 1648313027939.6433
+      },
+      "displayName": "it assignes style classes properly ✓",
+      "skipped": false,
+      "status": "pass",
+      "testFilePath": "../components/Buttons/Button/Button.test.tsx"
+    }
+  ]
+}
