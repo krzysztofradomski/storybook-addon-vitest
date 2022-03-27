@@ -1,3 +1,15 @@
+# v0.0.4 (Sun Mar 27 2022)
+
+#### ⚠️ Pushed to `main`
+
+- fix keywords order (krzysztof.radomski@netigate.se)
+
+#### Authors: 1
+
+- Krzysztof Radomski (krzysztof.radomski@netigate.se)
+
+---
+
 # v0.0.3 (Sun Mar 27 2022)
 
 #### ⚠️ Pushed to `main`
