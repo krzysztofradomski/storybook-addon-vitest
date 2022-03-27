@@ -17,8 +17,18 @@ const VitestPanel = () => {
 
   return (
     <ul>
-      {!data && <li>No test results file available</li>}
-      {data?.length == 0 && <li>No tests found</li>}
+      {!fileName && !data ? (
+        <li>
+          Please check your config: missing both `testFile` and `results`.{" "}
+        </li>
+      ) : null}
+      {!fileName && data ? (
+        <li>Please check your config: missing `testFile` name.</li>
+      ) : null}
+      {fileName && !data ? (
+        <li>Please check your config: missing `results` file.</li>
+      ) : null}
+      {fileName && data?.length == 0 && <li>No tests found</li>}
       {data?.map((d: { status: string; displayName: string }) => (
         <li key={d.displayName}>
           <p>
