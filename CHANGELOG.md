@@ -1,3 +1,17 @@
+# v0.0.5 (Sun Mar 27 2022)
+
+#### ⚠️ Pushed to `main`
+
+- Merge branch 'main' of https://github.com/krzysztofradomski/storybook-addon-vitest (krzysztof.radomski@netigate.se)
+- update readme file (krzysztof.radomski@netigate.se)
+- improve config error messages (krzysztof.radomski@netigate.se)
+
+#### Authors: 1
+
+- Krzysztof Radomski (krzysztof.radomski@netigate.se)
+
+---
+
 # v0.0.4 (Sun Mar 27 2022)
 
 #### ⚠️ Pushed to `main`
