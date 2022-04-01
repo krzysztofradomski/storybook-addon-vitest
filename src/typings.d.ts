@@ -2,7 +2,7 @@ declare module "global";
 
 export type VitestParams = {
   testFile: string;
-  results: JSONTestResults;
+  testResults: JSONTestResults;
 };
 
 export type JSONTestResults = {
@@ -21,13 +21,29 @@ export type JSONTestResults = {
 };
 
 export type TestResult = {
-  perfStats: {
-    runtime: number;
-    start: number;
-    end: number;
-  };
-  displayName: string;
-  skipped: boolean;
+  assertionResults: AssertionResult[];
+  startTime: number;
+  endTime: number;
   status: string;
-  testFilePath: string;
+  message: string;
+  name: string;
+};
+
+export type AssertionResult = {
+  ancestorTitles: string[];
+  fullName: string;
+  title: string;
+  duration: number;
+  status: string;
+};
+
+export type Result = {
+  title: string;
+  status: string;
+};
+
+export type ResultGroup = Result[];
+
+export type Accumulator = {
+  [key: string]: ResultGroup;
 };

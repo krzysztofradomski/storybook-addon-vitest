@@ -8,7 +8,7 @@ export default {
   parameters: {
     vitest: {
       testFile: "Button.test.tsx",
-      results: vitestResults,
+      testResults: vitestResults,
     },
     myAddonParameter: `
 <MyComponent boolProp scalarProp={1} complexProp={{ foo: 1, bar: '2' }}>

@@ -1,45 +1,66 @@
 import React from "react";
 import { useParameter } from "@storybook/api";
 import { PARAM_KEY } from "./constants";
-import { JSONTestResults, TestResult, VitestParams } from "./typings";
+import {
+  Accumulator,
+  AssertionResult,
+  JSONTestResults,
+  ResultGroup,
+  VitestParams,
+} from "./typings";
 
 const VitestPanel = () => {
   const params = useParameter(PARAM_KEY, null) as VitestParams;
   const fileName = params?.testFile || null;
-  const json: JSONTestResults = params?.results || null;
+  const json: JSONTestResults = params?.testResults || null;
 
-  const data = json?.testResults
-    ?.filter((t: TestResult) => t.testFilePath.includes(fileName))
-    .map((t) => ({
-      status: t.status,
-      displayName: t.displayName,
-    }));
+  const data: { [s: string]: any } =
+    json?.testResults
+      .find((r) => r?.name?.includes(fileName))
+      ?.assertionResults.reduce((acc, curr) => {
+        const [, key] = curr.ancestorTitles;
+        acc[key] = (acc[key] || []) as ResultGroup;
+        const group = acc[key];
+        group.push({ title: curr.title, status: curr.status });
+        return acc;
+      }, {} as Accumulator) || [];
+
+  console.log({ data });
 
   return (
-    <ul>
+    <div style={{ padding: "1rem" }}>
       {!fileName && !data ? (
-        <li>
-          Please check your config: missing both `testFile` and `results`.{" "}
-        </li>
+        <p>
+          Please check your config: missing both `testFile` and `testResults`.{" "}
+        </p>
       ) : null}
       {!fileName && data ? (
-        <li>Please check your config: missing `testFile` name.</li>
+        <p>Please check your config: missing `testFile` name.</p>
       ) : null}
       {fileName && !data ? (
-        <li>Please check your config: missing `results` file.</li>
+        <p>Please check your config: missing `testResults` file.</p>
       ) : null}
-      {fileName && data?.length == 0 && <li>No tests found</li>}
-      {data?.map((d: { status: string; displayName: string }) => (
-        <li key={d.displayName}>
-          <p>
-            {d.displayName}
-            <span style={{ color: d.status === "pass" ? "green" : "red" }}>
-              {d.status}
-            </span>
-          </p>
-        </li>
+      {fileName && Object.values(data)?.length == 0 && <p>No tests found</p>}
+      {Object.entries(data)?.map(([title, group]) => (
+        <div key={title}>
+          <strong>{title}</strong>
+          <ul>
+            {(group as AssertionResult[]).map((d) => (
+              <li key={d.title}>
+                <p>
+                  {d.title}
+                  <span
+                    style={{ color: d.status === "passed" ? "green" : "red" }}
+                  >
+                    {d.status}
+                  </span>
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
       ))}
-    </ul>
+    </div>
   );
 };
 

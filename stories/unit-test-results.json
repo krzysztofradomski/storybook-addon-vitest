@@ -1,6 +1,6 @@
 {
-  "numTotalTestSuites": 2,
-  "numPassedTestSuites": 2,
+  "numTotalTestSuites": 3,
+  "numPassedTestSuites": 3,
   "numFailedTestSuites": 0,
   "numPendingTestSuites": 0,
   "numTotalTests": 6,
@@ -8,74 +8,65 @@
   "numFailedTests": 0,
   "numPendingTests": 0,
   "numTodoTests": 0,
-  "startTime": 1648313025668,
+  "startTime": 1648846020951,
   "success": true,
   "testResults": [
     {
-      "perfStats": {
-        "runtime": 15.065416038036346,
-        "start": 1648313027911,
-        "end": 1648313027926.0654
-      },
-      "displayName": "it renders text and children ✓",
-      "skipped": false,
-      "status": "pass",
-      "testFilePath": "../components/Buttons/Button/Button.test.tsx"
-    },
-    {
-      "perfStats": {
-        "runtime": 1.8208749890327454,
-        "start": 1648313027926,
-        "end": 1648313027927.8208
-      },
-      "displayName": "it handles click action ✓",
-      "skipped": false,
-      "status": "pass",
-      "testFilePath": "../components/Buttons/Button/Button.test.tsx"
-    },
-    {
-      "perfStats": {
-        "runtime": 1.6565420031547546,
-        "start": 1648313027928,
-        "end": 1648313027929.6565
-      },
-      "displayName": "it can be disabled correctly ✓",
-      "skipped": false,
-      "status": "pass",
-      "testFilePath": "../components/Buttons/Button/Button.test.tsx"
-    },
-    {
-      "perfStats": {
-        "runtime": 1.6252089738845825,
-        "start": 1648313027930,
-        "end": 1648313027931.6252
-      },
-      "displayName": "it can be marked with test id ✓",
-      "skipped": false,
-      "status": "pass",
-      "testFilePath": "../components/Buttons/Button/Button.test.tsx"
-    },
-    {
-      "perfStats": {
-        "runtime": 3.6624580025672913,
-        "start": 1648313027931,
-        "end": 1648313027934.6624
-      },
-      "displayName": "it can have its type changed to reset or submit ✓",
-      "skipped": false,
-      "status": "pass",
-      "testFilePath": "../components/Buttons/Button/Button.test.tsx"
-    },
-    {
-      "perfStats": {
-        "runtime": 4.643208026885986,
-        "start": 1648313027935,
-        "end": 1648313027939.6433
-      },
-      "displayName": "it assignes style classes properly ✓",
-      "skipped": false,
-      "status": "pass",
-      "testFilePath": "../components/Buttons/Button/Button.test.tsx"
+      "assertionResults": [
+        {
+          "ancestorTitles": ["", "Button unit tests, group 1: "],
+          "fullName": " Button unit tests, group 1:  it can have its type changed to reset or submit ✓",
+          "status": "passed",
+          "title": "it can have its type changed to reset or submit ✓",
+          "duration": 18.345666974782944,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": ["", "Button unit tests, group 1: "],
+          "fullName": " Button unit tests, group 1:  it assignes style classes properly ✓",
+          "status": "passed",
+          "title": "it assignes style classes properly ✓",
+          "duration": 7.158125013113022,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": ["", "Button unit tests, group 2: "],
+          "fullName": " Button unit tests, group 2:  it renders text and children ✓",
+          "status": "passed",
+          "title": "it renders text and children ✓",
+          "duration": 1.7936250269412994,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": ["", "Button unit tests, group 2: "],
+          "fullName": " Button unit tests, group 2:  it handles click action ✓",
+          "status": "passed",
+          "title": "it handles click action ✓",
+          "duration": 1.5335839986801147,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": ["", "Button unit tests, group 2: "],
+          "fullName": " Button unit tests, group 2:  it can be disabled correctly ✓",
+          "status": "passed",
+          "title": "it can be disabled correctly ✓",
+          "duration": 3.512290984392166,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": ["", "Button unit tests, group 2: "],
+          "fullName": " Button unit tests, group 2:  it can be marked with test id 2✓",
+          "status": "passed",
+          "title": "it can be marked with test id 2✓",
+          "duration": 1.2109169960021973,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1648846027929,
+      "endTime": 1648846027963.211,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/krzysztofradomski/work/account.settings/src/components/Buttons/Button/Button.test.tsx"
     }
   ]
 }
