@@ -1,3 +1,15 @@
+# v0.0.6 (Fri Apr 01 2022)
+
+#### ⚠️ Pushed to `main`
+
+- match breaking change in vitest v0.8.0 (krzysztof.radomski@netigate.se)
+
+#### Authors: 1
+
+- Krzysztof Radomski (krzysztof.radomski@netigate.se)
+
+---
+
 # v0.0.5 (Sun Mar 27 2022)
 
 #### ⚠️ Pushed to `main`
