@@ -1,3 +1,17 @@
+# v0.0.7 (Tue Apr 12 2022)
+
+#### ⚠️ Pushed to `main`
+
+- update readme (krzysztof.radomski@netigate.se)
+- fix: dont show panel contents when not active (krzysztof.radomski@netigate.se)
+- fix: dont show panel contents if not configured (krzysztof.radomski@netigate.se)
+
+#### Authors: 1
+
+- Krzysztof Radomski (krzysztof.radomski@netigate.se)
+
+---
+
 # v0.0.6 (Fri Apr 01 2022)
 
 #### ⚠️ Pushed to `main`
