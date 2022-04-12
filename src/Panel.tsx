@@ -14,6 +14,8 @@ const VitestPanel = () => {
   const fileName = params?.testFile || null;
   const json: JSONTestResults = params?.testResults || null;
 
+  if (!params) return null;
+
   const data: { [s: string]: any } =
     json?.testResults
       .find((r) => r?.name?.includes(fileName))
@@ -24,8 +26,6 @@ const VitestPanel = () => {
         group.push({ title: curr.title, status: curr.status });
         return acc;
       }, {} as Accumulator) || [];
-
-  console.log({ data });
 
   return (
     <div style={{ padding: "1rem" }}>
