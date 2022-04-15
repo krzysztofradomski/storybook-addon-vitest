@@ -1,13 +1,13 @@
 ## storybook_vitest_addon
 
-### \_
+###
 
 [![Release](https://github.com/krzysztofradomski/storybook-addon-vitest/actions/workflows/release.yml/badge.svg)](https://github.com/krzysztofradomski/storybook-addon-vitest/actions/workflows/release.yml)
 
 Installation:
 
 ```
-yarn add -dev storybook_vitest_addon
+yarn add --dev storybook_vitest_addon
 ```
 
 Addon meant to display Vitest unit test results in a new Stoybook panel. Developed and tested with React.
