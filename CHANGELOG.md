@@ -1,3 +1,15 @@
+# v0.0.8 (Fri Apr 15 2022)
+
+#### ⚠️ Pushed to `main`
+
+- Update README.md ([@krzysztofradomski](https://github.com/krzysztofradomski))
+
+#### Authors: 1
+
+- Krzysztof "Chris" Radomski ([@krzysztofradomski](https://github.com/krzysztofradomski))
+
+---
+
 # v0.0.7 (Tue Apr 12 2022)
 
 #### ⚠️ Pushed to `main`
