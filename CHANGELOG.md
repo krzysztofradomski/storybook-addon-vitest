@@ -1,3 +1,16 @@
+# v0.1.3 (Thu Nov 02 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Update README.md ([@krzysztofradomski](https://github.com/krzysztofradomski))
+- chore: update checkout action ([@krzysztofradomski](https://github.com/krzysztofradomski))
+
+#### Authors: 1
+
+- Krzysztof "Chris" Radomski ([@krzysztofradomski](https://github.com/krzysztofradomski))
+
+---
+
 # v0.0.9 (Thu Nov 02 2023)
 
 #### ⚠️ Pushed to `main`
