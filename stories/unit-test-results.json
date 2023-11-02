@@ -1,69 +1,69 @@
 {
-  "numTotalTestSuites": 3,
-  "numPassedTestSuites": 3,
-  "numFailedTestSuites": 0,
+  "numTotalTestSuites": 16,
+  "numPassedTestSuites": 14,
+  "numFailedTestSuites": 2,
   "numPendingTestSuites": 0,
-  "numTotalTests": 6,
-  "numPassedTests": 6,
+  "numTotalTests": 18,
+  "numPassedTests": 18,
   "numFailedTests": 0,
   "numPendingTests": 0,
   "numTodoTests": 0,
-  "startTime": 1648846020951,
-  "success": true,
+  "startTime": 1698956313163,
+  "success": false,
   "testResults": [
     {
       "assertionResults": [
         {
-          "ancestorTitles": ["", "Button unit tests, group 1: "],
-          "fullName": " Button unit tests, group 1:  it can have its type changed to reset or submit ✓",
-          "status": "passed",
-          "title": "it can have its type changed to reset or submit ✓",
-          "duration": 18.345666974782944,
-          "failureMessages": []
-        },
-        {
-          "ancestorTitles": ["", "Button unit tests, group 1: "],
-          "fullName": " Button unit tests, group 1:  it assignes style classes properly ✓",
-          "status": "passed",
-          "title": "it assignes style classes properly ✓",
-          "duration": 7.158125013113022,
-          "failureMessages": []
-        },
-        {
-          "ancestorTitles": ["", "Button unit tests, group 2: "],
-          "fullName": " Button unit tests, group 2:  it renders text and children ✓",
+          "ancestorTitles": ["", "Button unit tests: "],
+          "fullName": " Button unit tests:  it renders text and children lala ✓",
           "status": "passed",
           "title": "it renders text and children ✓",
-          "duration": 1.7936250269412994,
+          "duration": 18,
           "failureMessages": []
         },
         {
-          "ancestorTitles": ["", "Button unit tests, group 2: "],
-          "fullName": " Button unit tests, group 2:  it handles click action ✓",
+          "ancestorTitles": ["", "Button unit tests: "],
+          "fullName": " Button unit tests:  it handles click action ✓",
           "status": "passed",
           "title": "it handles click action ✓",
-          "duration": 1.5335839986801147,
+          "duration": 2,
           "failureMessages": []
         },
         {
-          "ancestorTitles": ["", "Button unit tests, group 2: "],
-          "fullName": " Button unit tests, group 2:  it can be disabled correctly ✓",
+          "ancestorTitles": ["", "Button unit tests: "],
+          "fullName": " Button unit tests:  it can be disabled correctly ✓",
           "status": "passed",
           "title": "it can be disabled correctly ✓",
-          "duration": 3.512290984392166,
+          "duration": 2,
           "failureMessages": []
         },
         {
-          "ancestorTitles": ["", "Button unit tests, group 2: "],
-          "fullName": " Button unit tests, group 2:  it can be marked with test id 2✓",
+          "ancestorTitles": ["", "Button unit tests: "],
+          "fullName": " Button unit tests:  it can be marked with test id ✓",
           "status": "passed",
-          "title": "it can be marked with test id 2✓",
-          "duration": 1.2109169960021973,
+          "title": "it can be marked with test id ✓",
+          "duration": 2,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": ["", "Button unit tests: "],
+          "fullName": " Button unit tests:  it can have its type changed to reset or submit ✓",
+          "status": "passed",
+          "title": "it can have its type changed to reset or submit ✓",
+          "duration": 5,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": ["", "Button unit tests: "],
+          "fullName": " Button unit tests:  it assignes style classes properly ✓",
+          "status": "passed",
+          "title": "it assignes style classes properly ✓",
+          "duration": 7,
           "failureMessages": []
         }
       ],
-      "startTime": 1648846027929,
-      "endTime": 1648846027963.211,
+      "startTime": 1698956314807,
+      "endTime": 1698956314843,
       "status": "passed",
       "message": "",
       "name": "/Users/krzysztofradomski/work/account.settings/src/components/Buttons/Button/Button.test.tsx"
