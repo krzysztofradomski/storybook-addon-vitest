@@ -19,7 +19,7 @@ Compatibility:
 "vitest": "^0.34.6"
 ```
 
-Usage:
+Description:
 
 Addon meant to display Vitest unit test results in a new Stoybook panel. Developed and tested with React.
 Simply add it to the addon list in your Storybook config, and then you can use it in any story.
@@ -36,14 +36,14 @@ Example usage:
 import vitestResults from "./unit-test-results.json";
 /.../
 export default {
-title: "Example/Button",
-component: Button,
-parameters: {
-vitest: {
-testFile: "Button.test.tsx",
-testResults: vitestResults,
-},
-},
+  title: "Example/Button",
+  component: Button,
+  parameters: {
+    vitest: {
+      testFile: "Button.test.tsx",
+      testResults: vitestResults,
+    },
+  },
 };
 /.../
 
@@ -51,6 +51,5 @@ testResults: vitestResults,
 
 ![](2022-04-01-22-48-00.png)
 
-```
 
-```
+Also see https://storybook.js.org/addons/storybook_vitest_addon
