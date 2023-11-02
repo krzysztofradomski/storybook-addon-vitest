@@ -1,3 +1,22 @@
+# v0.0.9 (Thu Nov 02 2023)
+
+#### ⚠️ Pushed to `main`
+
+- fix: attempt to fix gh build (krzysztof.radomski@netigate.se)
+- use different action (krzysztof.radomski@netigate.se)
+- fix version (krzysztof.radomski@netigate.se)
+- update gh actions (krzysztof.radomski@netigate.se)
+- fix gh build and update readme (krzysztof.radomski@netigate.se)
+- v0.1.0 (krzysztof.radomski@netigate.se)
+- update node version (krzysztof.radomski@netigate.se)
+- feat: migrate to sb 7 (krzysztof.radomski@netigate.se)
+
+#### Authors: 1
+
+- Krzysztof Radomski (krzysztof.radomski@netigate.se)
+
+---
+
 # v0.0.8 (Fri Apr 15 2022)
 
 #### ⚠️ Pushed to `main`
