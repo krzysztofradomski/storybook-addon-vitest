@@ -13,10 +13,10 @@ yarn add storybook_vitest_addon
 Compatibility:
 
 ```
-"storybook": "^7.5.2",
-"@storybook/react": "^7.5.2",
-"vite": "^4.5.0",
-"vitest": "^0.34.6"
+"storybook": "^7.6.6",
+"@storybook/react": "^7.6.6",
+"vite": "^5.0.10",
+"vitest": "^1.1.0"
 ```
 
 Description:
@@ -50,6 +50,5 @@ export default {
 ```
 
 ![](2022-04-01-22-48-00.png)
-
 
 Also see https://storybook.js.org/addons/storybook_vitest_addon
