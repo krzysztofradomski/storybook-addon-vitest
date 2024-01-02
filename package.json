@@ -99,5 +99,8 @@
   },
   "resolutions": {
     "jackspeak": "2.3.6"
+  },
+  "dependencies": {
+    "jackspeak": "^2.3.6"
   }
 }
