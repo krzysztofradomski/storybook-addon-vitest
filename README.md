@@ -13,8 +13,8 @@ yarn add storybook_vitest_addon
 Compatibility:
 
 ```
-"storybook": "^7.6.6",
-"@storybook/react": "^7.6.6",
+"storybook": "^7.6.7",
+"@storybook/react": "^7.6.7",
 "vite": "^5.0.10",
 "vitest": "^1.1.0"
 ```
