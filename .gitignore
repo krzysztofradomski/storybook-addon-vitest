@@ -5,3 +5,5 @@ build-storybook.log
 .DS_Store
 .env
 yarn-error.log
+.yarn
+.yarnrc.yml
