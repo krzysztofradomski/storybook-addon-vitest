@@ -44,20 +44,31 @@ const VitestPanel = () => {
       {Object.entries(data)?.map(([title, group]) => (
         <div key={title}>
           <strong>{title}</strong>
-          <ul>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              rowGap: 8,
+              paddingTop: 8,
+              paddingBottom: 16,
+            }}
+          >
             {(group as AssertionResult[]).map((d) => (
-              <li key={d.title}>
-                <p>
-                  {d.title}
-                  <span
-                    style={{ color: d.status === "passed" ? "green" : "red" }}
-                  >
-                    {d.status}
-                  </span>
-                </p>
-              </li>
+              <div
+                key={d.title}
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  columnGap: 4,
+                  paddingLeft: 16,
+                }}
+              >
+                <div>{d.status === "passed" ? "✔️" : "❌"}</div>
+                <div>{d.title}</div>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       ))}
     </div>

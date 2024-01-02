@@ -10,8 +10,8 @@ addons.register(ADDON_ID, () => {
     type: types.PANEL,
     title: "Tests results",
     match: ({ viewMode }) => viewMode === "story",
-    render: ({ active, key }) => (
-      <AddonPanel active={active} key={key}>
+    render: ({ active }) => (
+      <AddonPanel active={active}>
         <Panel />
       </AddonPanel>
     ),
