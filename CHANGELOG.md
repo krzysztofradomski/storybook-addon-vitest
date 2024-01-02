@@ -1,3 +1,27 @@
+# v0.1.4 (Tue Jan 02 2024)
+
+#### 🐛 Bug Fix
+
+- Updates for 7.6 [#3](https://github.com/krzysztofradomski/storybook-addon-vitest/pull/3) ([@finwiseJMc](https://github.com/finwiseJMc))
+
+#### ⚠️ Pushed to `main`
+
+- Update package.json and release.yml to move from yarn to npm (krzysztof.radomski@netigate.se)
+- Update package.json with jackspeak resolution (krzysztof.radomski@netigate.se)
+- downgrade yarn action (krzysztof.radomski@netigate.se)
+- updae yarn action (krzysztof.radomski@netigate.se)
+- regenerate lockfile (krzysztof.radomski@netigate.se)
+- remove references to yarn (krzysztof.radomski@netigate.se)
+- add missing files for local build (krzysztof.radomski@netigate.se)
+- update dependencies and regenerate lockfile (krzysztof.radomski@netigate.se)
+
+#### Authors: 2
+
+- [@finwiseJMc](https://github.com/finwiseJMc)
+- Krzysztof Radomski (krzysztof.radomski@netigate.se)
+
+---
+
 # v0.1.3 (Thu Nov 02 2023)
 
 #### ⚠️ Pushed to `main`
