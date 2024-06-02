@@ -61,7 +61,7 @@ const VitestPanel = () => {
     error = "Please check your config: missing `testFile` name.";
   } else if (!testResults) {
     error = "Please check your config: missing `testResults` file.";
-  } else if ("testResults"! in testResults) {
+  } else if (!("testResults" in testResults)) {
     error =
       "Please check your config: `testResults` file does not contain valid results format.";
   } else if (Object.keys(fileTestResults).length === 0) {
