@@ -1,76 +1,110 @@
 import React from "react";
-import { useParameter } from "@storybook/manager-api";
-import { PARAM_KEY } from "./constants";
 import {
-  Accumulator,
+  GroupedTestResults,
+  GroupResult,
   AssertionResult,
-  JSONTestResults,
-  ResultGroup,
   VitestParams,
 } from "./typings";
+import { PARAM_KEY } from "./constants";
+import { useParameter } from "@storybook/manager-api";
+
+function reduceFileTestResults(
+  accumulator: GroupedTestResults,
+  assertionResult: AssertionResult,
+): GroupedTestResults {
+  const [, testGroupName] = assertionResult.ancestorTitles;
+  if (!accumulator[testGroupName]) {
+    accumulator[testGroupName] = [];
+  }
+  accumulator[testGroupName].push({
+    title: assertionResult.title,
+    status: assertionResult.status,
+  });
+
+  return accumulator;
+}
+
+function extractFileTestsData(
+  results: VitestParams["testResults"],
+  fileName: string,
+): GroupedTestResults {
+  const fileTestResults = results.testResults?.find((r) =>
+    r.name.includes(fileName),
+  );
+  if (!fileTestResults) {
+    return {};
+  }
+
+  return fileTestResults.assertionResults.reduce(
+    reduceFileTestResults,
+    {} as GroupedTestResults,
+  );
+}
 
 const VitestPanel = () => {
-  const params = useParameter(PARAM_KEY, null) as VitestParams;
-  const fileName = params?.testFile || null;
-  const json: JSONTestResults = params?.testResults || null;
+  const params = useParameter(PARAM_KEY) as Partial<VitestParams> | null;
+  if (!params) {
+    return null;
+  }
 
-  if (!params) return null;
+  const { testResults, testFile: fileName } = params;
+  let fileTestResults: GroupedTestResults | null = null;
+  if (testResults && fileName) {
+    fileTestResults = extractFileTestsData(testResults, fileName);
+  }
 
-  const data: { [s: string]: any } =
-    json?.testResults
-      .find((r) => r?.name?.includes(fileName))
-      ?.assertionResults.reduce((acc, curr) => {
-        const [, key] = curr.ancestorTitles;
-        acc[key] = (acc[key] || []) as ResultGroup;
-        const group = acc[key];
-        group.push({ title: curr.title, status: curr.status });
-        return acc;
-      }, {} as Accumulator) || [];
+  let error: string | null = null;
+  if (!fileName && !testResults) {
+    error =
+      'Please check your config: missing both `testFile` and `testResults`.{" "}';
+  } else if (!fileName) {
+    error = "Please check your config: missing `testFile` name.";
+  } else if (!testResults) {
+    error = "Please check your config: missing `testResults` file.";
+  } else if ("testResults"! in testResults) {
+    error =
+      "Please check your config: `testResults` file does not contain valid results format.";
+  } else if (Object.keys(fileTestResults).length === 0) {
+    error = "No tests found.";
+  }
 
   return (
     <div style={{ padding: "1rem" }}>
-      {!fileName && !data ? (
-        <p>
-          Please check your config: missing both `testFile` and `testResults`.{" "}
-        </p>
-      ) : null}
-      {!fileName && data ? (
-        <p>Please check your config: missing `testFile` name.</p>
-      ) : null}
-      {fileName && !data ? (
-        <p>Please check your config: missing `testResults` file.</p>
-      ) : null}
-      {fileName && Object.values(data)?.length == 0 && <p>No tests found</p>}
-      {Object.entries(data)?.map(([title, group]) => (
-        <div key={title}>
-          <strong>{title}</strong>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              rowGap: 8,
-              paddingTop: 8,
-              paddingBottom: 16,
-            }}
-          >
-            {(group as AssertionResult[]).map((d) => (
+      {error && <p> {error}</p>}
+
+      {fileTestResults &&
+        Object.entries(fileTestResults).map(
+          ([title, group]: [string, GroupResult]) => (
+            <div key={title}>
+              <strong>{title}</strong>
               <div
-                key={d.title}
                 style={{
                   display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  columnGap: 4,
-                  paddingLeft: 16,
+                  flexDirection: "column",
+                  rowGap: 8,
+                  paddingTop: 8,
+                  paddingBottom: 16,
                 }}
               >
-                <div>{d.status === "passed" ? "✔️" : "❌"}</div>
-                <div>{d.title}</div>
+                {group.map((d) => (
+                  <div
+                    key={d.title}
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      alignItems: "center",
+                      columnGap: 4,
+                      paddingLeft: 16,
+                    }}
+                  >
+                    <div>{d.status === "passed" ? "✔️" : "❌"}</div>
+                    <div>{d.title}</div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
-      ))}
+            </div>
+          ),
+        )}
     </div>
   );
 };
