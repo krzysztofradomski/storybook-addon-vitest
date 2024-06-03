@@ -1,17 +1,17 @@
 module.exports = {
-  stories: [
-    "../stories/**/*.stories.mdx",
-    "../stories/**/*.stories.@(js|jsx|ts|tsx)",
-  ],
-
+  stories: ["../stories/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: ["@storybook/addon-essentials", "../preset.js"],
 
   framework: {
-    name: "@storybook/react-webpack5",
-    options: {}
+    options: {},
+    name: "@storybook/react-vite",
   },
 
   docs: {
-    autodocs: true
-  }
+    autodocs: true,
+  },
+
+  typescript: {
+    reactDocgen: "react-docgen-typescript",
+  },
 };
