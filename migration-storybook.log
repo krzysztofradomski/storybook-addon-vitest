@@ -1,0 +1,163 @@
+🔎 checking possible migrations..
+
+🔎 found a 'new-frameworks' migration:
+╭ Automigration detected ─────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                                                 │
+│   We've detected your project is not fully setup with the new framework format, which was introduced in Storybook 7.            │
+│                                                                                                                                 │
+│   Storybook 7 introduced the concept of frameworks, which abstracts configuration for renderers (e.g. React, Vue), builders     │
+│   (e.g. Webpack, Vite) and defaults to make integrations easier.                                                                │
+│                                                                                                                                 │
+│   Your project should be updated to use Storybook's framework: @storybook/react-vite. We can attempt to do this for you         │
+│   automatically.                                                                                                                │
+│                                                                                                                                 │
+│   Here are the steps this migration will do to migrate your project:                                                            │
+│   - Update or specify the framework field in .storybook/main.js with the value of "@storybook/react-vite".                      │
+│                                                                                                                                 │
+│                                                                                                                                 │
+│   To learn more about the new framework format, see:                                                                            │
+│   https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#new-framework-api                                             │
+│                                                                                                                                 │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+? Do you want to run the 'new-frameworks' migration on your project? › (Y/n)✔ Do you want to run the 'new-frameworks' migration on your project? … yes
+✅ Updating main.js
+✅ Updating "framework" field
+✅ ran new-frameworks migration
+
+🔎 found a 'viteConfigFile' migration:
+╭ Migration notification ──────────────────────────────────────────────────────────╮
+│                                                                                  │
+│   Since version 8.0.0, Storybook no longer ships with an in-built Vite config.   │
+│   Please add a vite.config.js file to your project root.                         │
+│                                                                                  │
+│   You can find more information on how to do this here:                          │
+│   https://storybook.js.org/docs/8.0/migration-guide/#missing-viteconfigjs-file   │
+│                                                                                  │
+│   This change was necessary to support newer versions of Vite.                   │
+│                                                                                  │
+╰──────────────────────────────────────────────────────────────────────────────────╯
+? Do you want to continue? › (Y/n)✔ Do you want to continue? … yes
+
+🔎 found a 'mdx-to-csf' migration:
+╭ Automigration detected ─────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                                                 │
+│   We've detected your project has one or more globs in your 'stories' config that matches .stories.mdx files:                   │
+│   "../stories/**/*.stories.mdx"                                                                                                 │
+│   "../stories/**/*.stories.@(js|jsx|ts|tsx)"                                                                                    │
+│                                                                                                                                 │
+│   In Storybook 7, we have deprecated defining stories in MDX files, and consequently have changed the suffix to simply .mdx.    │
+│   Since Storybook 8, we have removed the support of story definition in MDX files entirely. Therefore '.stories.mdx' files      │
+│   aren't supported anymore.                                                                                                     │
+│                                                                                                                                 │
+│   Now, since Storybook 8.0, we have removed support for .stories.mdx files.                                                     │
+│                                                                                                                                 │
+│   We can automatically migrate your 'stories' config to include any .mdx file instead of just .stories.mdx.                     │
+│   That would result in the following 'stories' config:                                                                          │
+│   "../stories/**/*.mdx"                                                                                                         │
+│   "../stories/**/*.stories.@(js|jsx|ts|tsx)"                                                                                    │
+│                                                                                                                                 │
+│   Additionally, we will run the 'mdx-to-csf' codemod for you, which tries to transform '*.stories.mdx' files to                 │
+│   '*.stories.js' and '*.mdx' files.                                                                                             │
+│                                                                                                                                 │
+│   To learn more about this change, see: https://storybook.js.org/docs/migration-guide#storiesmdx-to-mdxcsf                      │
+│                                                                                                                                 │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+? Do you want to run the 'mdx-to-csf' migration on your project? › (Y/n)✔ Do you want to run the 'mdx-to-csf' migration on your project? … yes
+✅ Setting 'stories' config:
+[
+  "../stories/**/*.mdx",
+  "../stories/**/*.stories.@(js|jsx|ts|tsx)"
+]
+? Please enter the glob for your MDX stories › ./src/**/*.stories.mdx✔ Please enter the glob for your MDX stories … ./src/**/*.stories.mdx
+=> Applying mdx-to-csf: 0 files
+=> No matching files for glob: ./src/**/*.stories.mdx
+The migration successfully updated your 'stories' config to include any .mdx file instead of just .stories.mdx.
+
+It also ran the 'mdx-to-csf' codemod to convert your MDX stories to CSF format.
+This codemod is not perfect however, so you may need to manually fix any issues it couldn't handle.
+✅ ran mdx-to-csf migration
+
+🔎 found a 'react-docgen' migration:
+╭ Automigration detected ──────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                              │
+│   Since Storybook 8.0, react-docgen is now the default for generating component controls, replacing          │
+│   react-docgen-typescript.                                                                                   │
+│   This offers better performance and suits most cases.                                                       │
+│   However, for complex TypeScript types or specific type features, the generated controls might not be as    │
+│   precise.                                                                                                   │
+│                                                                                                              │
+│   For more on this change, check the migration guide:                                                        │
+│   https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#react-docgen-component-analysis-by-defau   │
+│   lt                                                                                                         │
+│                                                                                                              │
+│   For known "react-docgen" limitations, see:                                                                 │
+│   https://github.com/storybookjs/storybook/issues/26606                                                      │
+│                                                                                                              │
+│   Press Y to revert to react-docgen-typesript, press N to use react-docgen                                   │
+│                                                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+? Do you want to run the 'react-docgen' migration on your project? › (Y/n)✔ Do you want to run the 'react-docgen' migration on your project? … yes
+✅ Setting typescript.reactDocgen
+✅ ran react-docgen migration
+
+🔎 found a 'visual-tests-addon' migration:
+╭ Automigration detected ───────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                                       │
+│   New to Storybook 8: Storybook's Visual Tests addon helps you catch unintentional changes/bugs in your stories.      │
+│   The addon is powered by Chromatic, a cloud-based testing tool developed by Storybook's core team.                   │
+│                                                                                                                       │
+│   Learn more: storybook.js.org/docs/writing-tests/visual-testing                                                      │
+│                                                                                                                       │
+│   Install Visual Tests addon in your project?                                                                         │
+│                                                                                                                       │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+? Do you want to run the 'visual-tests-addon' migration on your project? › (Y/n)✔ Do you want to run the 'visual-tests-addon' migration on your project? … no
+
+⚠️  failed to check fix autodocs-tags
+
+Error: ❌ Failed to remove the deprecated docs.autodocs setting from .storybook/main.js.
+
+There is no preview config file in which to add the autodocs tag.
+
+Please perform the migration by hand: https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#mainjs-docsautodocs-is-deprecated
+    at Object.check (/Users/krzysztofradomski/priv/storybook-addon-vitest/node_modules/@storybook/cli/dist/generate.js:575:535)
+    at runFixes (/Users/krzysztofradomski/priv/storybook-addon-vitest/node_modules/@storybook/cli/dist/generate.js:634:2935)
+    at async automigrate (/Users/krzysztofradomski/priv/storybook-addon-vitest/node_modules/@storybook/cli/dist/generate.js:634:1635)
+    at async doAutomigrate (/Users/krzysztofradomski/priv/storybook-addon-vitest/node_modules/@storybook/cli/dist/generate.js:634:651)
+    at async Command.<anonymous> (/Users/krzysztofradomski/priv/storybook-addon-vitest/node_modules/@storybook/cli/dist/generate.js:706:2872)
+
+╭ Migration check ran with failures ────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                                       │
+│   Successful migrations:                                                                                              │
+│                                                                                                                       │
+│   new-frameworks, mdx-to-csf, react-docgen                                                                            │
+│                                                                                                                       │
+│   Failed migrations:                                                                                                  │
+│                                                                                                                       │
+│   autodocs-tags:                                                                                                      │
+│   ❌ Failed to remove the deprecated docs.autodocs setting from .storybook/main.js.                                   │
+│                                                                                                                       │
+│   There is no preview config file in which to add the autodocs tag.                                                   │
+│                                                                                                                       │
+│   Please perform the migration by hand:                                                                               │
+│   https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#mainjs-docsautodocs-is-deprecated                   │
+│                                                                                                                       │
+│   You can find the full logs in /Users/krzysztofradomski/priv/storybook-addon-vitest/migration-storybook.log          │
+│                                                                                                                       │
+│   Skipped migrations:                                                                                                 │
+│                                                                                                                       │
+│   visual-tests-addon                                                                                                  │
+│                                                                                                                       │
+│   ─────────────────────────────────────────────────                                                                   │
+│                                                                                                                       │
+│   If you'd like to run the migrations again, you can do so by running 'npx storybook automigrate'                     │
+│                                                                                                                       │
+│   The automigrations try to migrate common patterns in your project, but might not contain everything needed to       │
+│   migrate to the latest version of Storybook.                                                                         │
+│                                                                                                                       │
+│   Please check the changelog and migration guide for manual migrations and more information:                          │
+│   https://storybook.js.org/docs/8.0/migration-guide                                                                   │
+│   And reach out on Discord if you need help: https://discord.gg/storybook                                             │
+│                                                                                                                       │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
