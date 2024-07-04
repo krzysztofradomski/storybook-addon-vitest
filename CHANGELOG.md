@@ -1,3 +1,15 @@
+# v0.1.8 (Thu Jul 04 2024)
+
+#### ⚠️ Pushed to `main`
+
+- Update README.md ([@krzysztofradomski](https://github.com/krzysztofradomski))
+
+#### Authors: 1
+
+- Krzysztof "Chris" Radomski ([@krzysztofradomski](https://github.com/krzysztofradomski))
+
+---
+
 # v0.1.6 (Thu Jul 04 2024)
 
 #### 🐛 Bug Fix
