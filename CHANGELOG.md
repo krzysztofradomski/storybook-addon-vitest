@@ -1,3 +1,17 @@
+# v0.1.6 (Thu Jul 04 2024)
+
+#### 🐛 Bug Fix
+
+- Feat: Upgrade to storybook 8 [#5](https://github.com/krzysztofradomski/storybook-addon-vitest/pull/5) (d504280@burda.com krzysztof.radomski@netigate.se [@rustybud](https://github.com/rustybud))
+
+#### Authors: 3
+
+- [@rustybud](https://github.com/rustybud)
+- Ahmed Jaouadi (d504280@burda.com)
+- Krzysztof Radomski (krzysztof.radomski@netigate.se)
+
+---
+
 # v0.1.4 (Tue Jan 02 2024)
 
 #### 🐛 Bug Fix
