@@ -21,7 +21,7 @@ export type JSONTestResults = {
 };
 
 export type TestResult = {
-  assertionResults: AssertionResult[];
+  assertionResults: Array<AssertionResult>;
   startTime: number;
   endTime: number;
   status: string;
@@ -30,7 +30,7 @@ export type TestResult = {
 };
 
 export type AssertionResult = {
-  ancestorTitles: string[];
+  ancestorTitles: [string, string];
   fullName: string;
   title: string;
   duration: number;
@@ -42,8 +42,8 @@ export type Result = {
   status: string;
 };
 
-export type ResultGroup = Result[];
+export type GroupResult = Array<Result>;
 
-export type Accumulator = {
-  [key: string]: ResultGroup;
+export type GroupedTestResults = {
+  [key: string]: GroupResult;
 };
