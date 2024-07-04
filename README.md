@@ -13,9 +13,9 @@ yarn add storybook_vitest_addon
 Compatibility:
 
 ```
-"storybook": "^7.6.7",
-"@storybook/react": "^7.6.7",
-"vite": "^5.0.10",
+"storybook": "^8.1.5",
+"@storybook/react": "8.1.5",
+"@storybook/react-vite": "^8.1.5",
 "vitest": "^1.1.0"
 ```
 
