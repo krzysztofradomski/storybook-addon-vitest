@@ -1,28 +1,62 @@
-name: Release
+name: Publish to npm
 
-on: [push]
+on:
+  release:
+    types: [published]
+
+permissions:
+  id-token: write
+  contents: read
+
+concurrency:
+  group: publish-${{ github.event.release.id }}
+  cancel-in-progress: false
 
 jobs:
-  release:
+  publish:
+    name: Publish package
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci')"
+    timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name }}
 
-      - name: Prepare repository
-        run: git fetch --unshallow --tags
-
-      - name: Use Node.js 20.7.0
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20.7.0
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Upgrade npm for trusted publishing
+        run: npm install -g npm@latest
 
       - name: Install dependencies
         run: npm ci
-      
-      - name: Create Release
+
+      - name: Verify tag matches package version
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
         run: |
-          npm run release
+          TAG_VERSION="${RELEASE_TAG#v}"
+          PKG_VERSION=$(node -p "require('./package.json').version")
+          if [ "$TAG_VERSION" != "$PKG_VERSION" ]; then
+            echo "Release tag ${RELEASE_TAG} (version ${TAG_VERSION}) does not match package.json version ${PKG_VERSION}"
+            exit 1
+          fi
+
+      - name: Test
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+      - name: Configure registry for publish
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Publish to npm
+        run: npm publish --access public --ignore-scripts
