@@ -8,7 +8,7 @@ import {
 import { PARAM_KEY } from "./constants";
 import { useParameter } from "storybook/manager-api";
 
-function reduceFileTestResults(
+export function reduceFileTestResults(
   accumulator: GroupedTestResults,
   assertionResult: AssertionResult,
 ): GroupedTestResults {
@@ -24,7 +24,7 @@ function reduceFileTestResults(
   return accumulator;
 }
 
-function extractFileTestsData(
+export function extractFileTestsData(
   results: VitestParams["testResults"],
   fileName: string,
 ): GroupedTestResults {
