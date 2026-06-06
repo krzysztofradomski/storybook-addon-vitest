@@ -1,6 +1,6 @@
 #!/usr/bin/env zx
 
-const packageJson = require("../package.json");
+const packageJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../package.json'), 'utf-8'));
 
 const name = packageJson.name;
 const displayName = packageJson.storybook.displayName;
