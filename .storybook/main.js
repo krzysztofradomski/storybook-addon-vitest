@@ -1,6 +1,6 @@
 module.exports = {
   stories: ["../stories/**/*.stories.@(js|jsx|ts|tsx)"],
-  addons: ["@storybook/addon-essentials", "../preset.js"],
+  addons: ["../preset.js"],
 
   framework: {
     options: {},
