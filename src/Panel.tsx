@@ -6,7 +6,7 @@ import {
   VitestParams,
 } from "./typings";
 import { PARAM_KEY } from "./constants";
-import { useParameter } from "@storybook/manager-api";
+import { useParameter } from "storybook/manager-api";
 
 function reduceFileTestResults(
   accumulator: GroupedTestResults,
@@ -64,7 +64,7 @@ const VitestPanel = () => {
   } else if (!("testResults" in testResults)) {
     error =
       "Please check your config: `testResults` file does not contain valid results format.";
-  } else if (Object.keys(fileTestResults).length === 0) {
+  } else if (!fileTestResults || Object.keys(fileTestResults).length === 0) {
     error = "No tests found.";
   }
 
