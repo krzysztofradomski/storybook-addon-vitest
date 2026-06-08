@@ -27,6 +27,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
           cache: 'npm'
 
       - name: Upgrade npm for trusted publishing
@@ -51,12 +52,6 @@ jobs:
 
       - name: Build
         run: npm run build
-
-      - name: Configure registry for publish
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          registry-url: 'https://registry.npmjs.org'
 
       - name: Publish to npm
         run: npm publish --access public --ignore-scripts

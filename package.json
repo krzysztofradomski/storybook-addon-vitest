@@ -1,6 +1,6 @@
 {
   "name": "storybook_vitest_addon",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Adds a panel to display Vitest unit test results",
   "keywords": [
     "storybook-addons",
@@ -17,7 +17,7 @@
     "type": "git",
     "url": "https://github.com/krzysztofradomski/storybook-addon-vitest"
   },
-  "author": "Krzysztof Radomski <krzysztof@radomski.io>",
+  "author": "Krzysztof Radomski <hello@radomski.dev>",
   "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
