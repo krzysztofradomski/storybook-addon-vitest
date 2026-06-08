@@ -2,13 +2,21 @@
 
 ###
 
-[![Release](https://github.com/krzysztofradomski/storybook-addon-vitest/actions/workflows/release.yml/badge.svg)](https://github.com/krzysztofradomski/storybook-addon-vitest/actions/workflows/release.yml)
+[![CI](https://github.com/krzysztofradomski/storybook-addon-vitest/actions/workflows/ci.yml/badge.svg)](https://github.com/krzysztofradomski/storybook-addon-vitest/actions/workflows/ci.yml)
+[![Release](https://github.com/krzysztofradomski/storybook-addon-vitest/actions/workflows/release.yml/badge.svg?event=release)](https://github.com/krzysztofradomski/storybook-addon-vitest/actions/workflows/release.yml)
+[![npm downloads](https://img.shields.io/npm/dm/storybook_vitest_addon.svg)](https://www.npmjs.com/package/storybook_vitest_addon)
 
 Installation:
 
 ```
 npm install storybook_vitest_addon
-# or
+```
+
+```
+pnpm install storybook_vitest_addon
+```
+
+```
 yarn add storybook_vitest_addon
 ```
 
