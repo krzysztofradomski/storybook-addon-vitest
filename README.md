@@ -2,7 +2,7 @@
 
 ###
 
-[![CI](https://github.com/krzysztofradomski/storybook-addon-vitest/actions/workflows/ci.yml/badge.svg)](https://github.com/krzysztofradomski/storybook-addon-vitest/actions/workflows/ci.yml)
+[![CI](https://img.shields.io/github/actions/workflow/status/krzysztofradomski/storybook-addon-vitest/ci.yml?branch=main&label=CI)](https://github.com/krzysztofradomski/storybook-addon-vitest/actions/workflows/ci.yml)
 [![Release](https://github.com/krzysztofradomski/storybook-addon-vitest/actions/workflows/release.yml/badge.svg?event=release)](https://github.com/krzysztofradomski/storybook-addon-vitest/actions/workflows/release.yml)
 [![npm downloads](https://img.shields.io/npm/dm/storybook_vitest_addon.svg)](https://www.npmjs.com/package/storybook_vitest_addon)
 
