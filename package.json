@@ -51,8 +51,8 @@
     "@babel/preset-env": "^7.29.7",
     "@babel/preset-react": "^7.29.7",
     "@babel/preset-typescript": "^7.29.7",
-    "@storybook/react": "^10.4.2",
-    "@storybook/react-vite": "^10.4.2",
+    "@storybook/react": "^11.0.0-alpha.4",
+    "@storybook/react-vite": "^11.0.0-alpha.4",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@types/node": "^22.15.0",
@@ -67,14 +67,14 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "rimraf": "^6.0.1",
-    "storybook": "^10.4.2",
+    "storybook": "^11.0.0-alpha.4",
     "typescript": "^6.0.3",
     "vitest": "^4.1.8",
     "webpack": "^5.107.2",
     "zx": "^8.8.5"
   },
   "peerDependencies": {
-    "storybook": "^10.4.2"
+    "storybook": "^10.4.2 || ^11.0.0-0"
   },
   "publishConfig": {
     "access": "public"

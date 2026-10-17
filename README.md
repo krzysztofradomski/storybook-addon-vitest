@@ -23,7 +23,7 @@ yarn add storybook_vitest_addon
 Compatibility:
 
 ```
-"storybook": "^10.4.2",
+"storybook": "^10.4.2 || ^11.0.0",
 "vite": "^8.0.0",
 "@vitejs/plugin-react": "^6.0.2",
 "react": "^19.0.0",
@@ -31,7 +31,7 @@ Compatibility:
 "vitest": "^1.1.0"
 ```
 
-> **Note:** As of v0.1.8, this addon targets **Storybook 10** (unified `storybook` package),
+> **Note:** This addon supports **Storybook 10 and 11** (unified `storybook` package),
 > **Vite 8**, **React 19**, and **TypeScript 6**. The old `@storybook/react` and
 > `@storybook/react-vite` v8 peer dependencies are no longer required.
 
